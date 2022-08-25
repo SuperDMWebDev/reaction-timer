@@ -27,12 +27,13 @@ export default {
       console.log("startTimer");
       this.timer = setInterval(() => {
         this.reactionTime += 1;
-      }, 1000);
+      }, 10);
     },
     stopTimer() {
       // stop the timer
       clearInterval(this.timer);
       console.log(this.reactionTime);
+      this.$emit("end", this.reactionTime);
     },
   },
   updated() {
